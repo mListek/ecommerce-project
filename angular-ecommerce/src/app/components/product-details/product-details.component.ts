@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Product = new Product();
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -22,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleProductDetails() {
-    
+
     // get the "id" param string. convert srting to a number using the "+" symbol
     const theProductId: number = +this.route.snapshot.paramMap.get("id")!;
 

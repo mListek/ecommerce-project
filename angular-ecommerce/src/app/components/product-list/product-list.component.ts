@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
   searchMode: boolean;
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -33,11 +33,11 @@ export class ProductListComponent implements OnInit {
     else {
       this.handleListProducts();
     }
-    
+
   }
 
   handleSearchProducts() {
-    
+
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
 
     // now search for the products using keyword

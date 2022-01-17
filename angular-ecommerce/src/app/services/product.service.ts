@@ -9,8 +9,8 @@ import { ProductCategory } from '../common/product-category';
   providedIn: 'root'
 })
 export class ProductService {
-  
-  
+
+
   private baseUrl = 'http://localhost:8080/api/products';
 
   private categoryUrl = 'http://localhost:8080/api/product-category';
@@ -18,7 +18,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   getProduct(theProductId: number): Observable<Product> {
-    
+
     // need to build URL based on product id
     const productUrl = `${this.baseUrl}/${theProductId}`;
 
@@ -60,7 +60,7 @@ interface GetResponseProducts {
   }
 }
 
-interface GetResponseProductCategory{
+interface GetResponseProductCategory {
   _embedded: {
     productCategory: ProductCategory[];
   }
