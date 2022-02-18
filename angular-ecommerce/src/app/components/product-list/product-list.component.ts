@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
   theTotalElements: number = 0;
 
   previousKeyword: string = null;
-  
+
 
   constructor(private productService: ProductService,
     private route: ActivatedRoute) { }
@@ -62,8 +62,8 @@ export class ProductListComponent implements OnInit {
 
     // now search for the products using keyword
     this.productService.searchProductsPaginate(this.thePageNumber - 1,
-                                               this.thePageSize,
-                                               theKeyword).subscribe(this.processResult());
+      this.thePageSize,
+      theKeyword).subscribe(this.processResult());
   }
 
   handleListProducts() {
@@ -97,13 +97,13 @@ export class ProductListComponent implements OnInit {
 
     // now get the products for the given category id
     this.productService.getProductListPaginate(this.thePageNumber - 1,
-                                               this.thePageSize,
-                                               this.currentCategoryId)
-                                               .subscribe(this.processResult());
+      this.thePageSize,
+      this.currentCategoryId)
+      .subscribe(this.processResult());
   }
 
   processResult() {
-    return (data:any) => {
+    return (data: any) => {
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
       this.thePageSize = data.page.size;
